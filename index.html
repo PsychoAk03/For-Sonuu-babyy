@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Neha ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  background:radial-gradient(circle at top,#111,#000);
+  font-family:Poppins, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+  overflow:hidden;
+}
+
+.screen{text-align:center; padding:20px}
+.hidden{display:none}
+
+h2,h3{margin:8px 0}
+
+/* Flip card */
+.flip-container{perspective:1200px}
+.flip-card{
+  width:330px;
+  height:240px;
+  transform-style:preserve-3d;
+  transition:1.2s ease;
+  cursor:pointer;
+}
+.flip-card.flipped{transform:rotateY(180deg)}
+
+.side{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  border-radius:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:22px;
+  box-sizing:border-box;
+}
+
+.front{
+  background:linear-gradient(135deg,#fff,#f2f2f2);
+  color:#000;
+}
+
+.back{
+  background:linear-gradient(135deg,#ff4d6d,#ff758c);
+  color:#fff;
+  transform:rotateY(180deg);
+}
+
+/* soft fade animation */
+.fade{
+  animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(15px)}
+  to{opacity:1; transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Screen 1 : POV -->
+<div id="screen1" class="screen fade">
+  <h2>POV :</h2>
+  <h3>You didn’t just make her<br>New Year special…</h3>
+  <h3>You made her feel valued ❤️</h3>
+</div>
+
+<!-- Screen 2 : Flip Card -->
+<div id="screen2" class="screen hidden">
+  <div class="flip-container">
+    <div id="card" class="flip-card" onclick="flipCard()">
+      <div class="side front">
+        <h2>Tap gently 💌</h2>
+      </div>
+      <div class="side back">
+        <div>
+          <h2>Neha 🌸</h2>
+          <p>
+            काही लोक आयुष्यात येतात<br>
+            आणि सगळंच बदलून जातं…
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Screen 3 : Deep Message -->
+<div id="screen3" class="screen hidden fade">
+  <h2>For You, Neha 🤍</h2>
+  <p style="font-size:15px; line-height:1.7; max-width:360px;">
+    I don’t know how to explain this in simple words,  
+    but you are not just important to me…  
+    you are *home* to me.<br><br>
+
+    In the middle of chaos, noise, and tired days,  
+    you are the calm my heart looks for.  
+    The way you exist in my life  
+    makes ordinary moments feel meaningful.<br><br>
+
+    काही नातं नावाने नाही,  
+    पण भावना खूप खोल असतात.  
+    तू माझ्यासाठी तसंच काहीतरी आहेस —  
+    शांत, खरी आणि खूप precious 🤍<br><br>
+
+    I may not say it every day,  
+    but having you in my life  
+    makes me feel stronger, softer, and happier at the same time.  
+    You matter to me… more than you’ll ever realize.
+  </p>
+</div>
+
+<audio id="song" src="song.mp3" loop></audio>
+
+<script>
+setTimeout(()=>{
+  screen1.classList.add("hidden");
+  screen2.classList.remove("hidden");
+},2800);
+
+function flipCard(){
+  card.classList.add("flipped");
+  song.volume = 0.7;
+  song.play();
+
+  setTimeout(()=>{
+    screen2.classList.add("hidden");
+    screen3.classList.remove("hidden");
+  },3500);
+}
+</script>
+
+</body>
+</html>
